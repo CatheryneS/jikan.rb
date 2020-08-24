@@ -122,8 +122,8 @@ module Jikan
       end
     end
 
-    def search(title, type=:anime, page=1)
-      @json = Jikan::API.new.get(endpoint: "search", page: page, flag: type, query: title)
+    def search(title, type=:anime)
+      @json = Jikan::API.new.get(endpoint: "search", flag: type, query: title)
       Jikan::Search.new(@json, type)
     end
 
